@@ -85,6 +85,13 @@ Change your config main:
 Change your config console:
 
     return array(
+        'import'=>array(
+            'application.models.*',
+            'application.components.*',
+            'application.modules.user.models.*',
+            'application.modules.user.components.*',
+        ),
+    
         #...
         'modules'=>array(
             #...
@@ -122,6 +129,14 @@ Change your config console:
             #...
         ),
         #...
+        'components'=>array(
+        #...
+            'db'=>array(
+            #...
+                'tablePrefix' => 'tbl_',
+            #...
+            ),
+        ),    
     );
 
 Install
