@@ -9,7 +9,7 @@ Download or checkout (SVN/Git) from http://yii-user.2mx.org and unpack files in 
 Git clone
 ---------
 
-    clone git git@github.com:mishamx/yii-user.git
+    git clone https://github.com/rajdsouza/yii-user.git
 
 Configure
 ---------
@@ -85,6 +85,13 @@ Change your config main:
 Change your config console:
 
     return array(
+        'import'=>array(
+            'application.models.*',
+            'application.components.*',
+            'application.modules.user.models.*',
+            'application.modules.user.components.*',
+        ),
+    
         #...
         'modules'=>array(
             #...
@@ -122,6 +129,14 @@ Change your config console:
             #...
         ),
         #...
+        'components'=>array(
+        #...
+            'db'=>array(
+            #...
+                'tablePrefix' => 'tbl_',
+            #...
+            ),
+        ),    
     );
 
 Install
